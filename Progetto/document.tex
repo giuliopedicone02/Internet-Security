@@ -1,0 +1,82 @@
+\documentclass[12pt,a4paper,openany,oneside]{book}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[italian]{babel}
+
+\usepackage{xcolor} % Pacchetto per il colore del testo
+\usepackage{hyperref} % Pacchetto per i link ipertestuali
+
+% Configurazione del colore dei link ipertestuali
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,    % Colore dei link interni
+    urlcolor=blue      % Colore dei link URL esterni
+}
+
+%\usepackage[latin1]{inputenc} %Windows
+\usepackage[utf8x]{inputenc} %Linux
+%\usepackage[applemac]{inputenc} %Mac
+
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=bf,tableposition=top]{caption}
+
+\usepackage{listings}
+  \usepackage{courier}
+ \lstset{
+         language=C++,
+         basicstyle=\footnotesize\ttfamily,
+         numbers=left,           
+         numberstyle=\tiny,       
+         numbersep=5pt,        
+         tabsize=5,                 
+         extendedchars=true,         
+         breaklines=true,
+         keywordstyle=\textbf,           
+         stringstyle=\color{white}\ttfamily,
+         showspaces=false,       
+         showtabs=false,           
+         xleftmargin=17pt,
+         framexleftmargin=17pt,
+         framexrightmargin=5pt,
+         framexbottommargin=4pt,
+         showstringspaces=false          
+ }
+ 
+ \addto\captionsitalian{%
+ 	\renewcommand{\lstlistingname}{Codice}}
+
+\setcounter{tocdepth}{3} % fa apparire le subsubsection nell'indice
+\setcounter{secnumdepth}{3} % e le numera
+
+
+\usepackage{amsmath}
+
+
+\usepackage{framed}
+
+\begin{document}
+
+%Inserisce qui il frontespizio
+\input{parts/frontespizio} %<- richiama il file "parts/titlepage.tex" che contiene il frontespizio
+
+%Genera l'indice
+\tableofcontents
+
+\input{parts/capitolo1} %<- richiama il file "parts/capitolo1.tex" che contiene il primo capitolo
+%Si consiglia di creare un nuovo file per ogni capitolo
+\input{parts/capitolo2} 
+\input{parts/capitolo3} 
+\input{parts/capitolo4} 
+\input{parts/capitolo5}
+\input{parts/capitolo6}
+\input{parts/capitolo7}
+\input{parts/capitolo8}
+
+\input{parts/conclusione} %<- richiama il file "parts/conclusione.tex" che contiene la conclusione
+
+\input{parts/glossario} %<- richiama il file "parts/conclusione.tex" che contiene la conclusione
+
+%Inserisce la bibliografia
+\input{parts/bibliography} %<- richiama il file "parts/conclusione.tex" che contiene la conclusione
+
+\end{document}

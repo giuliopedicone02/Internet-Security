@@ -1,0 +1,42 @@
+\chapter{Tecniche di pseudonimizzazione}
+
+In linea di principio, una funzione di pseudonimizzazione mappa identificatori in pseudonimi. C'è un requisito fondamentale per una funzione di pseudonimizzazione. Consideriamo due identificatori differenti \( \text{Id}_1 \) e \( \text{Id}_2 \) e i loro pseudonimi corrispondenti \( \text{pseudo}_1 \) e \( \text{pseudo}_2 \). Una funzione di pseudonimizzazione deve verificare che \( \text{pseudo}_1 \) sia diverso da \( \text{pseudo}_2 \). Altrimenti, il recupero dell'identificatore potrebbe essere ambiguo: l'entità di pseudonimizzazione non può determinare se \( \text{pseudo}_1 \) corrisponde a \( \text{Id}_1 \) o \( \text{Id}_2 \). Tuttavia, un singolo identificatore \( \text{Id} \) può essere associato a più pseudonimi \( (\text{pseudo}_1, \text{pseudo}_2, \ldots) \) purché sia possibile per l'entità di pseudonimizzazione invertire questa operazione.
+
+\section{Principali tecniche di Pseudonimizzazione}
+
+\subsection{Contatore}
+
+Il contatore è la funzione di pseudonimizzazione più semplice, dove gli identificatori vengono sostituiti da un numero incrementato in modo monotono. È adatto per dataset piccoli e non complessi, ma può presentare problemi di implementazione e scalabilità per dataset più grandi.
+
+\subsection{Generatore di numeri casuali (RNG)}
+
+Il generatore di numeri casuali assegna un numero casuale agli identificatori, garantendo che ogni pseudonimo sia imprevedibile. Tuttavia, possono verificarsi collisioni, influenzate dal noto paradosso del compleanno.
+
+\subsection{Funzione hash crittografica}
+
+Una funzione hash crittografica mappa stringhe di lunghezza variabile in output di lunghezza fissa. Tuttavia, è considerata debole per la pseudonimizzazione a causa della vulnerabilità a attacchi di forza bruta e dizionario.
+
+\subsection{Codice di autenticazione del messaggio (MAC)}
+
+Il MAC è una funzione di hash con chiave che genera pseudonimi utilizzando una chiave segreta. È robusto dal punto di vista della protezione dei dati, a condizione che la chiave non venga compromessa.
+
+\section{Meccanismi di recupero}
+
+In conformità alla definizione, l'uso di informazioni aggiuntive è fondamentale per la pseudonimizzazione, pertanto l'entità di pseudonimizzazione deve implementare un meccanismo di recupero.
+Questa operazione può essere necessaria, ad esempio, quando l'entità di pseudonimizzazione rileva un'anomalia nel sistema e deve contattare le entità designate. Tale "anomalia" potrebbe essere una violazione dei dati, obbligando l'entità di pseudonimizzazione a notificare i soggetti dei dati in base al GDPR. Inoltre, il meccanismo di recupero potrebbe essere necessario per consentire l'esercizio dei diritti dei soggetti dei dati (ai sensi degli articoli 12-21 del GDPR).
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Metodo}              & \textbf{Recupero basato su pseudonimo} \\ \hline
+Counter                      & Tabella di mappatura                  \\ \hline
+Generatore di numeri casuali & Tabella di mappatura                  \\ \hline
+Funzione di hash crittografica  & Tabella di mappatura                  \\ \hline
+Codici di autenticazione del messaggio & Tabella di mappatura                  \\ \hline
+Crittaggio                   & Decrittazione                         \\ \hline
+\end{tabular}
+\caption{Confronto tra meccanismi di recupero}
+\end{table}
+
+

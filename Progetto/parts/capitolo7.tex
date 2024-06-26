@@ -1,0 +1,25 @@
+\chapter{Principali meccanismi di difesa}
+
+\section{Cos'è un attacco di re-identificazione?}
+
+Gli attacchi di re-identificazione sono metodi per de-anonimizzare i dati utilizzando informazioni aggiuntive, come database esterni, metadati o analisi statistica, per inferire le identità dei soggetti dei dati. Gli attacchi di re-identificazione possono essere classificati in tre tipi principali:
+
+\begin{itemize}
+    \item \textbf{Attacchi di collegamento (linking attack):} Coinvolgono il match di dati anonimizzati con altre fonti di dati che contengono informazioni identificative, come nomi, indirizzi o numeri di telefono.
+    \item \textbf{Attacchi di inferenza (inference attack):} Basati sull'uso di metodi statistici o di apprendimento automatico per dedurre informazioni sensibili dai dati anonimizzati, come genere, età o stato di salute.
+    \item \textbf{Attacchi di ricostruzione:} I più avanzati, utilizzano dati anonimizzati da più fonti o interrogazioni per ricostruire i dati originali o una loro approssimazione.
+\end{itemize}
+
+\section{Come prevenire gli attacchi di collegamento?}
+
+Utilizzare tecniche robuste di anonimizzazione per garantire che ogni record anonimizzato sia indistinguibile dagli altri e che ogni gruppo di record abbia una diversità sufficiente di valori sensibili.
+
+\section{Come prevenire gli attacchi di inferenza?}
+
+Utilizzare l'iniezione di rumore per aggiungere errori casuali o controllati ai dati, riducendo così la loro precisione e utilità per gli attaccanti. Applicare la privacy differenziale per garantire che la presenza o l'assenza di un individuo nei dati non influenzi l'esito delle analisi. Limitare la quantità e la granularità dei dati condivisi e utilizzare meccanismi di controllo degli accessi e crittografia.
+
+\section{Come prevenire gli attacchi di ricostruzione?}
+
+Utilizzare la computazione sicura multiparte per consentire a più parti di eseguire calcoli sui loro dati senza rivelarli tra loro o a terzi. Adottare la crittografia omomorfica per eseguire operazioni su dati crittografati senza decifrarli. Sfruttare il learning federato per apprendere da dati locali in modo distribuito senza centralizzarli.
+
+
