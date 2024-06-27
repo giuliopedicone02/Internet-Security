@@ -2,7 +2,7 @@
 
 \chapter{Sperimentazione di attacco di linking}
 
-La dimostrazione in questione simula un attacco di linking tra un dataset pseudonimizzato e un dataset contenente dati non anonimizzati. L'attacco riesce perché nei due dataset sono presenti corrispondenze tra soggetti riguardo attributi come:
+La dimostrazione in questione simula un \textbf{attacco di linking} tra un \textbf{dataset pseudonimizzato} e un dataset contenente dati non anonimizzati. L'attacco riesce perché nei due dataset sono presenti \textbf{corrispondenze tra soggetti} riguardo attributi come:
 
 \begin{itemize}
   \item Età
@@ -102,7 +102,7 @@ display(new_dataframe.head())
 
 \section{Creazione di un meccanismo di recupero}
 
-Quando pseudonimizziamo un dataset e abbiamo bisogno successivamente di risalire al nominativo originale del paziente, è necessario creare una tabella di mappatura tra il nominativo del paziente e il suo pseudonimo. Questa tabella deve essere conservata in modo sicuro e protetto poiché contiene tutte le coppie tra nominativo e pseudonimo presenti nel dataset pseudonimizzato.\\
+Quando pseudonimizziamo un dataset e abbiamo bisogno successivamente di risalire al nominativo originale del paziente, è necessario creare una \textbf{tabella di mappatura} tra il nominativo del paziente e il suo pseudonimo. Questa tabella deve essere conservata in modo sicuro e protetto poiché contiene tutte le coppie tra nominativo e pseudonimo presenti nel dataset pseudonimizzato.\\
 
 \begin{lstlisting}[caption={Creazione Tabella di Mappatura}]
 df_nomi = df['Name'].head(1000)

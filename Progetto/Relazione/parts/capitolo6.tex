@@ -1,21 +1,21 @@
 \chapter{Principali tecniche di attacco}
 
-Ci sono tre principali tecniche generiche per rompere una funzione di pseudonimizzazione: attacchi brute force, ricerca tramite dizionario e tentativi (guesswork). L'efficacia di questi attacchi dipende da diversi parametri, tra cui:
+Ci sono\textbf{ tre principali tecniche} generiche per rompere una funzione di pseudonimizzazione: \textbf{attacchi brute force}, ricerca tramite \textbf{dizionario} e\textbf{ tentativi} (guesswork). L'efficacia di questi attacchi dipende da diversi parametri, tra cui:
 \begin{itemize}
-  \item La quantità di informazioni sul titolare del pseudonimo (soggetto dei dati) contenuta nel pseudonimo.
-  \item La conoscenza pregressa dell'avversario.
-  \item La dimensione del dominio dell'identificatore.
-  \item La dimensione del dominio del pseudonimo.
-  \item La scelta e la configurazione della funzione di pseudonimizzazione utilizzata (che include anche la 
+  \item La\textbf{ quantità di informazioni} sul titolare del pseudonimo (soggetto dei dati) contenuta nel pseudonimo.
+  \item La \textbf{conoscenza pregressa dell'avversario}.
+  \item La\textbf{ dimensione del dominio} dell'\textbf{identificatore}.
+  \item La \textbf{dimensione del dominio} del \textbf{pseudonimo}.
+  \item La scelta e l\textbf{a configurazione della funzione di pseudonimizzazione} utilizzata (che include anche la 
   dimensione del segreto di pseudonimizzazione).
 \end{itemize}
 
 \section{Attacco brute force}
 
-La praticità di questa tecnica di attacco dipende dalla capacità dell'avversario di calcolare la funzione di pseudonimizzazione. 
+La praticità di questa tecnica di attacco dipende dalla capacità dell'avversario di \textbf{calcolare la funzione di pseudonimizzazione}. 
 A seconda dell'obiettivo dell'attacco, possono applicarsi condizioni aggiuntive. Se l'attacco brute force è utilizzato per ottenere il ripristino dell'identità originale, il dominio dell'identificatore deve essere finito e relativamente piccolo. Per ogni pseudonimo incontrato dall'avversario, questi può tentare di recuperare l'identificatore originale applicando la funzione di pseudonimizzazione su ogni valore del dominio dell'identificatore fino a trovare una corrispondenza.
 
-Consideriamo la pseudonimizzazione del mese di nascita in un dataset. La dimensione del dominio dell'identificatore è 12, quindi un avversario può enumerare rapidamente tutte le possibilità. I pseudonimi associati a ciascun mese sono calcolati in questo caso come la somma del codice ASCII delle prime tre lettere del mese di nascita (con la prima lettera maiuscola). Supponiamo che un avversario incontri il pseudonimo 301. Questo può applicare la funzione di pseudonimizzazione su ogni mese di nascita fino a trovare quello che corrisponde al valore 301. La Tabella 1 mostra i calcoli effettuati dall'avversario per riconoscere il pseudonimo 301, risultando nella tabella di mappatura della funzione di pseudonimizzazione.
+Consideriamo la\textbf{ pseudonimizzazione del mese di nascita in un dataset}. La dimensione del dominio dell'identificatore è \textbf{12}, quindi un avversario può enumerare rapidamente tutte le possibilità. I pseudonimi associati a ciascun mese sono calcolati in questo caso come la somma del codice ASCII delle prime tre lettere del mese di nascita (con la prima lettera maiuscola). Supponiamo che un avversario incontri il pseudonimo 301. Questo può applicare la funzione di pseudonimizzazione su ogni mese di nascita fino a trovare quello che corrisponde al valore 301. La Tabella 1 mostra i calcoli effettuati dall'avversario per riconoscere il pseudonimo 301, risultando nella tabella di mappatura della funzione di pseudonimizzazione.
 
 \begin{table}[h]
 \centering
@@ -41,15 +41,15 @@ Dic. & 268 \\
 \end{table}
 
 \section{Attacco Dizionario}
-La ricerca tramite dizionario è un'ottimizzazione dell'attacco brute force, che può risparmiare costi computazionali. 
-Ogni voce nel dizionario contiene un pseudonimo e l'identificatore o l'informazione corrispondente. Ogni volta che l'avversario ha bisogno di riconoscere nuovamente un pseudonimo, cerca nel dizionario. 
-La ricerca tramite dizionario consiste essenzialmente nel calcolo e nel salvataggio della tabella di mappatura. Sono possibili compromessi tra tempo e memoria utilizzando tavole di Hellman o tabelle arcobaleno per estendere ulteriormente il range. 
+La ricerca tramite dizionario è un'\textbf{ottimizzazione dell'attacco brute force}, che può risparmiare costi computazionali. 
+Ogni voce nel dizionario contiene un \textbf{pseudonimo} e l'identificatore o l'informazione corrispondente. Ogni volta che l'avversario ha bisogno di riconoscere nuovamente un pseudonimo, cerca nel dizionario. 
+La ricerca tramite dizionario consiste essenzialmente nel \textbf{calcolo} e nel \textbf{salvataggio della tabella di mappatura}. Sono possibili compromessi tra tempo e memoria utilizzando tavole di Hellman o tabelle arcobaleno per estendere ulteriormente il range. 
 
 \section{Guesswork}
 
-Questo tipo di attacco utilizza conoscenze pregresse (come distribuzioni di probabilità o altre informazioni secondarie) che l'avversario può avere su alcuni (o tutti) i titolari di pseudonimi.
-Sfruttare le caratteristiche statistiche degli identificatori è noto come guesswork ed è ampiamente utilizzato nella comunità di cracking delle password. 
-L'avversario non ha necessariamente bisogno di accedere alla funzione di pseudonimizzazione (poiché la discriminazione è possibile semplicemente eseguendo un'analisi della frequenza dei pseudonimi osservati).
+Questo tipo di attacco\textbf{ utilizza conoscenze pregresse} (come distribuzioni di probabilità o altre informazioni secondarie) che l'avversario può avere su alcuni (o tutti) i titolari di pseudonimi.
+Sfruttare le\textbf{ caratteristiche statistiche} degli identificatori è noto come guesswork ed è ampiamente utilizzato nella comunità di cracking delle password. 
+L'avversario \textbf{non ha} necessariamente \textbf{bisogno di accedere alla funzione di pseudonimizzazione} (poiché la discriminazione è possibile semplicemente eseguendo un'analisi della frequenza dei pseudonimi osservati).
 
 Consideriamo un caso che riguarda i pseudonimi corrispondenti ai "nomi propri". Esplorare completamente il dominio dei "nomi propri" è difficile. Tuttavia, l'avversario sa quali "nomi propri" sono i più popolari. L'avversario può eseguire una ricerca esaustiva o una ricerca tramite dizionario nel dominio dei "nomi propri" più popolari e ottenere la discriminazione.
 

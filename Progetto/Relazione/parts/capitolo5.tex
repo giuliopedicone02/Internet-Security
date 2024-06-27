@@ -6,24 +6,24 @@ In linea di principio, una funzione di pseudonimizzazione mappa identificatori i
 
 \subsection{Contatore}
 
-Il contatore è la funzione di pseudonimizzazione più semplice, dove gli identificatori vengono sostituiti da un numero incrementato in modo monotono. È adatto per dataset piccoli e non complessi, ma può presentare problemi di implementazione e scalabilità per dataset più grandi.
+Il contatore è la\textbf{ funzione di pseudonimizzazione più semplice}, dove gli identificatori vengono sostituiti da un numero incrementato in modo monotono. È adatto per dataset piccoli e non complessi, ma può presentare problemi di implementazione e scalabilità per dataset più grandi.
 
 \subsection{Generatore di numeri casuali (RNG)}
 
-Il generatore di numeri casuali assegna un numero casuale agli identificatori, garantendo che ogni pseudonimo sia imprevedibile. Tuttavia, possono verificarsi collisioni, influenzate dal noto paradosso del compleanno.
+Il generatore di numeri casuali assegna un \textbf{numero casuale agli identificatori}, garantendo che \textbf{ogni pseudonimo sia imprevedibile}. Tuttavia, possono verificarsi collisioni, influenzate dal noto paradosso del compleanno.
 
 \subsection{Funzione hash crittografica}
 
-Una funzione hash crittografica mappa stringhe di lunghezza variabile in output di lunghezza fissa. Tuttavia, è considerata debole per la pseudonimizzazione a causa della vulnerabilità a attacchi di forza bruta e dizionario.
+Una funzione hash crittografica\textbf{ mappa stringhe di lunghezza variabile} in output di \textbf{lunghezza fissa}. Tuttavia, è considerata\textbf{ debole }per la pseudonimizzazione a causa della vulnerabilità a \textbf{attacchi di forza bruta} e \textbf{dizionario.}
 
 \subsection{Codice di autenticazione del messaggio (MAC)}
 
-Il MAC è una funzione di hash con chiave che genera pseudonimi utilizzando una chiave segreta. È robusto dal punto di vista della protezione dei dati, a condizione che la chiave non venga compromessa.
+Il \textbf{MAC} è una \textbf{funzione di hash} con chiave che genera pseudonimi \textbf{utilizzando una chiave segreta}. È robusto dal punto di vista della protezione dei dati, a condizione che la chiave non venga compromessa.
 
 \section{Meccanismi di recupero}
 
-In conformità alla definizione, l'uso di informazioni aggiuntive è fondamentale per la pseudonimizzazione, pertanto l'entità di pseudonimizzazione deve implementare un meccanismo di recupero.
-Questa operazione può essere necessaria, ad esempio, quando l'entità di pseudonimizzazione rileva un'anomalia nel sistema e deve contattare le entità designate. Tale "anomalia" potrebbe essere una violazione dei dati, obbligando l'entità di pseudonimizzazione a notificare i soggetti dei dati in base al GDPR. Inoltre, il meccanismo di recupero potrebbe essere necessario per consentire l'esercizio dei diritti dei soggetti dei dati (ai sensi degli articoli 12-21 del GDPR).
+In conformità alla definizione, l'uso di informazioni aggiuntive è fondamentale per la pseudonimizzazione, pertanto l'entità di pseudonimizzazione deve implementare un \textbf{meccanismo di recupero.}
+Questa operazione può essere necessaria, ad esempio, quando l'entità di pseudonimizzazione rileva un'anomalia nel sistema e deve contattare le entità designate. Tale "anomalia" potrebbe essere una \textbf{violazione dei dati}, obbligando l'entità di pseudonimizzazione a \textbf{notificare i soggetti dei dati} in base al GDPR. Inoltre, il meccanismo di recupero potrebbe essere necessario per consentire l'esercizio dei diritti dei soggetti dei dati (ai sensi degli articoli 12-21 del GDPR).
 
 \begin{table}[ht]
 \centering

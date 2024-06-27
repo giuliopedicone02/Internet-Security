@@ -4,34 +4,34 @@ Come detto in precedenza, l'obiettivo principale della pseudonimizzazione è lim
 
 \section{Avversari Interni ed Avversari Esterni}
 
-Questo capitolo considera i possibili modelli di attacco e diversi tipi di attacchi di re-identificazione che sono importanti per la pseudonimizzazione. A tale scopo, vengono esaminati i concetti di avversari interni ed esterni, analizzando i loro possibili ruoli nei scenari di pseudonimizzazione discussi in precedenza nel rapporto. 
+Questo capitolo considera i possibili modelli di attacco e \textbf{diversi tipi di attacchi di re-identificazione} che sono importanti per la pseudonimizzazione. A tale scopo, vengono esaminati i concetti di avversari interni ed esterni, analizzando i loro possibili ruoli nei scenari di pseudonimizzazione discussi in precedenza nel rapporto. 
 
 \subsection{Avversari Interni}
 
-Secondo la definizione comune nel campo della sicurezza informatica, un avversario interno è una persona con conoscenze specifiche, capacità o permessi (riguardo all'obiettivo dell'avversario). 
+Secondo la definizione comune nel campo della sicurezza informatica, un \textbf{avversario interno} è una \textbf{persona con conoscenze specifiche}, capacità o permessi (riguardo all'obiettivo dell'avversario). 
 
-Nel contesto della pseudonimizzazione, ciò implica che l'avversario sia in grado di ottenere informazioni sul segreto di pseudonimizzazione e/o altre informazioni significative rilevanti.
+Nel contesto della pseudonimizzazione, ciò implica che l'avversario sia in grado di \textbf{ottenere informazioni sul segreto di pseudonimizzazione} e/o altre informazioni significative rilevanti.
 
 Ad esempio, un avversario interno potrebbe essere un dipendente che lavora per il responsabile del trattamento, oppure potrebbe essere situato all'interno di una terza parte fidata (agendo in questo caso come entità di pseudonimizzazione). Per default, le terze parti che potrebbero legittimamente avere accesso ai dati personali (come un'autorità di vigilanza o di forze dell'ordine) non vengono considerate avversarie.
 
 \subsection{Avversari Esterni}
 
-A differenza dell'avversario interno, un avversario esterno non ha accesso diretto al segreto di pseudonimizzazione o ad altre informazioni rilevanti. Tuttavia, questo tipo di avversario potrebbe avere accesso a un dataset pseudonimizzato e potrebbe essere in grado di eseguire il processo di pseudonimizzazione su valori di input arbitrari scelti dall'avversario.
+A differenza dell'avversario interno, un avversario esterno\textbf{ non ha accesso diretto al segreto di pseudonimizzazione} o ad altre informazioni rilevanti. Tuttavia, questo tipo di avversario potrebbe \textbf{avere accesso a un dataset pseudonimizzato} e potrebbe essere in grado di \textbf{eseguire il processo di pseudonimizzazione} su valori di input arbitrari scelti dall'avversario.
 
 L'obiettivo di un avversario esterno è aumentare le proprie conoscenze sul dataset pseudonimizzato, come ad esempio scoprire l'identità dietro un determinato pseudonimo e acquisire ulteriori informazioni su tale identità dai dati aggiuntivi presenti nel dataset associati al pseudonimo fornito.
 
 
 \section{Obiettivi degli Attacchi alla Pseudonimizzazione}
 
-A seconda del contesto e del metodo di pseudonimizzazione utilizzato, l'avversario può avere diversi obiettivi che intende raggiungere nei confronti dei dati pseudonimizzati, come il recupero del segreto di pseudonimizzazione, la re-identificazione completa o la discriminazione. 
+A seconda del contesto e del metodo di pseudonimizzazione utilizzato, l'avversario può avere diversi obiettivi che intende raggiungere nei confronti dei dati pseudonimizzati, come il \textbf{recupero del segreto di pseudonimizzazione}, la \textbf{re-identificazione completa} o la \textbf{discriminazione.} 
 
 \subsection{Segreto di Pseudonimizzazione}
 
-L'avversario si concentra sullo scoprire il segreto di pseudonimizzazione (cioè quando viene utilizzato il segreto di pseudonimizzazione). Questo tipo di attacco è il più grave, poiché con il segreto di pseudonimizzazione l'avversario è in grado di re-identificare qualsiasi pseudonimo nel dataset (re-identificazione completa o discriminazione), nonché di eseguire ulteriori processi di pseudonimizzazione sul dataset.
+L'avversario si concentra sullo scoprire il segreto di pseudonimizzazione (cioè quando viene utilizzato il segreto di pseudonimizzazione). Questo tipo di attacco è il più grave, poiché \textbf{con il segreto di pseudonimizzazione} l'avversario è in grado di\textbf{ re-identificare qualsiasi pseudonimo} nel dataset (re-identificazione completa o discriminazione), nonché di eseguire ulteriori processi di pseudonimizzazione sul dataset.
 
 \subsection{Re-identificazione Completa}
 
-Quando l'obiettivo dell'attacco è la re-identificazione completa, l'avversario desidera collegare uno o più pseudonimi all'identità dei detentori degli pseudonimi.
+Quando l'obiettivo dell'attacco è la re-identificazione completa, l'avversario desidera\textbf{ collegare uno o più pseudonimi all'identità dei detentori degli pseudonimi.}
 
 Il più grave attacco di re-identificazione completa consiste nella re-identificazione di tutti gli pseudonimi. 
 \\\\
@@ -47,6 +47,6 @@ Ad esempio, consideriamo un dataset pseudonimizzato dei voti degli studenti di u
 
 \subsection{Discriminazione}
 
-L'obiettivo dell'attacco di discriminazione è identificare le proprietà di un detentore di pseudonimo (almeno una). Queste proprietà potrebbero non portare direttamente alla scoperta dell'identità del detentore dello pseudonimo, ma possono essere sufficienti per discriminare in qualche modo.
-È importante capire che l'avversario non apprende l'identità del detentore dello pseudonimo in questo caso, ma solo alcune proprietà.L'avversario non è in grado di individuare l'esatto record di dati di un determinato detentore di pseudonimo. Tuttavia, le informazioni aggiuntive acquisite possono già essere sufficienti per scopi di discriminazione che l'avversario intende eseguire, o possono essere utilizzate in un successivo attacco di conoscenza di fondo per scoprire l'identità dietro uno pseudonimo.
+L'obiettivo dell'attacco di discriminazione è \textbf{identificare le proprietà di un detentore di pseudonimo} (almeno una). Queste proprietà potrebbero non portare direttamente alla scoperta dell'identità del detentore dello pseudonimo, ma possono essere sufficienti per discriminare in qualche modo.
+È importante capire che l'avversario \textbf{non apprende l'identità del detentore dello pseudonimo} in questo caso, ma\textbf{ solo alcune proprietà}.L'avversario \textbf{non è in grado di individuare l'esatto record} di dati di un determinato detentore di pseudonimo. Tuttavia, le informazioni aggiuntive acquisite possono già essere sufficienti per scopi di discriminazione che l'avversario intende eseguire, o possono essere utilizzate in un successivo attacco di conoscenza di fondo per scoprire l'identità dietro uno pseudonimo.
 

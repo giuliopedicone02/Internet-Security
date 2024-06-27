@@ -1,2 +1,26 @@
 \chapter*{Conclusione} %l'asterisco dopo chapter serve per visualizzare il capitolo come "non numerato"
 \addcontentsline{toc}{chapter}{Conclusione} %per fare inserire il capitolo nella tabella dei contenuti
+
+L'attacco di \textit{linking} effettuato su un database contenente informazioni mediche pseudonimizzate ha rivelato vulnerabilità significative nella protezione dei dati sensibili. Il processo di pseudonimizzazione, che prevede la sostituzione di informazioni identificative dirette con pseudonimi, è stato compromesso attraverso l'utilizzo di un dataset esterno contenente informazioni personali dei donatori con nominativi in chiaro. Questo attacco ha dimostrato come, nonostante le misure di protezione implementate, i dati pseudonimizzati possano essere reidentificati con sufficiente accuratezza mediante tecniche di correlazione tra dataset.
+
+Il dataset di partenza conteneva informazioni mediche sensibili pseudonimizzate. Questo approccio è comunemente utilizzato per ridurre il rischio di esposizione di dati personali in scenari di trattamento e analisi dei dati. Tuttavia, la presenza di un secondo dataset, contenente dati identificativi dei donatori, ha permesso di effettuare un collegamento tra le informazioni pseudonimizzate e le identità reali. In particolare, l'attacco ha sfruttato attributi comuni tra i due dataset, come \textbf{età}, \textbf{genere} e \textbf{gruppo sanguigno}, per stabilire connessioni e identificare i soggetti nel database pseudonimizzato.
+
+L'attacco di \textit{linking} si è articolato nelle seguenti fasi:
+
+\begin{enumerate}
+    \item \textbf{Preparazione dei dataset}: Sono stati raccolti due dataset distinti. Il primo contenente dati medici pseudonimizzati e il secondo contenente informazioni identificative in chiaro. Entrambi i dataset includevano attributi demografici comuni che sono stati utilizzati come chiavi di collegamento.
+    \item \textbf{Validazione dei risultati}: Le corrispondenze identificate dall'algoritmo sono state validate manualmente per verificare l'accuratezza del collegamento. Questo processo ha confermato la capacità dell'attacco di reidentificare correttamente una porzione significativa dei record pseudonimizzati.
+\end{enumerate}
+
+\newpage
+
+I risultati ottenuti hanno evidenziato la necessità di \textbf{rafforzare le misure di protezione} dei dati anche quando vengono applicate tecniche di pseudonimizzazione. In particolare, è emerso che la pseudonimizzazione, sebbene riduca il rischio di esposizione diretta, non è sufficiente a prevenire la reidentificazione quando esistono dataset esterni con informazioni sovrapponibili. È quindi essenziale adottare ulteriori misure di sicurezza, quali:
+
+\begin{itemize}
+    \item \textbf{Minimizzazione dei dati}: Limitare la quantità di informazioni personali raccolte e trattate nei dataset.
+    \item \textbf{Aggiunta di rumore}: Implementare tecniche di anonimizzazione più avanzate, come l'aggiunta di rumore ai dati demografici, per ridurre la possibilità di collegamento.
+    \item \textbf{Controlli di accesso rigorosi}: Garantire che solo personale autorizzato abbia accesso ai dati sensibili e che vengano effettuati controlli di accesso periodici.
+    \item \textbf{Valutazioni di rischio}: Effettuare valutazioni di rischio periodiche per identificare e mitigare potenziali vulnerabilità nei sistemi di gestione dei dati.
+\end{itemize}
+
+In conclusione, l'attacco di \textit{linking} evidenziato in questo studio serve come monito per le organizzazioni che trattano dati sensibili. È fondamentale comprendere che la protezione dei dati non può fare affidamento esclusivamente sulla pseudonimizzazione, ma deve essere integrata in un quadro di sicurezza complessivo che consideri potenziali minacce interne ed esterne. Solo attraverso un approccio  alla sicurezza dei dati sarà possibile garantire la privacy e la protezione delle informazioni sensibili.
