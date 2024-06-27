@@ -20,27 +20,28 @@
 \usepackage{graphicx}
 \usepackage[font=small,labelfont=bf,tableposition=top]{caption}
 
+
 \usepackage{listings}
-  \usepackage{courier}
- \lstset{
-         language=C++,
-         basicstyle=\footnotesize\ttfamily,
-         numbers=left,           
-         numberstyle=\tiny,       
-         numbersep=5pt,        
-         tabsize=5,                 
-         extendedchars=true,         
-         breaklines=true,
-         keywordstyle=\textbf,           
-         stringstyle=\color{white}\ttfamily,
-         showspaces=false,       
-         showtabs=false,           
-         xleftmargin=17pt,
-         framexleftmargin=17pt,
-         framexrightmargin=5pt,
-         framexbottommargin=4pt,
-         showstringspaces=false          
- }
+\usepackage{xcolor}
+
+% Configurazione del pacchetto listings per Python
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue},
+    commentstyle=\color{olive},
+    stringstyle=\color{red},
+    numberstyle=\tiny\color{gray},
+    numbers=left,
+    stepnumber=1,
+    numbersep=5pt,
+    backgroundcolor=\color{lightgray!20},
+    frame=single,
+    breaklines=true,
+    showspaces=false,
+    showstringspaces=false,
+    captionpos=b,
+}
  
  \addto\captionsitalian{%
  	\renewcommand{\lstlistingname}{Codice}}
