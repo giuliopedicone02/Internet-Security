@@ -6,7 +6,8 @@
 Repository creata a scopo didattico per essere utilizzata come backup dei file creati a lezione.
 
 * **Cartella Lezioni**: Comprende gli appunti presi durante le lezioni tenute dal docente (Le informazioni presenti potrebbero non essere corrette e presentare errori)
-* **Cartella Slides**: Comprende le slides del corso (Attualmente non aggiornate).
+* **Cartella Slides**: Comprende le slides del corso.
+* **Cartella Progetto**: Contiene la relazione ed il progetto relativo al tema assegnato: Pseudonimizzazione (Attacco)
 
 ## Authors
 
